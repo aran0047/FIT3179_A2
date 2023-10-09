@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI around the World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link rel = "stylesheet" href = "css/style.css">
+</head>
+
+<body>
+    <!-- Header "Container" -->
+    <h1>Global State of Artificial Intelligence around the World</h1>
+    <p> Insert explanation of topic, domain ... Include relevance, and short description of leaders.</p>
+
+    <div>
+        <label for = "scatterplot-dropdown">Select Attribute: </label>
+        <select id = "scatterplot-dropdown">
+            <option value = "Talent">Talent</option>
+            <option value = "Research">Research</option>
+            <option value = "Operating Environment">Operating Environment</option>
+            <option value = "Infrastructure">Infrastructure</option>
+            <option value = "Development">Development</option>
+            <option value = "Commercial">Commercial</option>
+        </select>
+    </div>
+
+    <div >
+        <!-- vibes -->
+        <p> Insert map</p>
+    </div>
+
+    <!--Dual column for scatterplot & accompanying text-->
+    <div class = "row">
+        <h2>Attributes vs. AI Index</h2>
+        <div class = "column">
+            <!-- (1/6) Scatterplot: Talent vs. AI Index -->
+            <div id = "scatter-index-talent"></div>
+            <script type="text/javascript">
+                var specVis1 = "./scatter_index_talent.json";
+                vegaEmbed('#scatter-index-talent', specVis1).then(function (result) {}).catch(console.error);
+            </script>
+
+            <!-- (2/ 6)Scatterplot: Research vs. AI Index -->
+            <div id = "scatter-index-research"></div>
+            <script type="text/javascript">
+                var specVis1 = "./scatter_index_research.json";
+                vegaEmbed('#scatter-index-research', specVis1).then(function (result) {}).catch(console.error);
+            </script>
+
+            <!-- (3/6) Scatterplot: Operating Environment vs. AI Index -->
+            <div id = "scatter-index-oe"></div>
+            <script type="text/javascript">
+                var specVis1 = "./scatter_index_oe.json";
+                vegaEmbed('#scatter-index-research', specVis1).then(function (result) {}).catch(console.error);
+            </script>
+
+            <!-- (4/6) Scatterplot: Infrastructure vs. AI Index -->
+            <div id = "scatter-index-infrastructure"></div>
+            <script type="text/javascript">
+                var specVis1 = "./scatter_index_infrastructure.json";
+                vegaEmbed('#scatter-index-infrastructure', specVis1).then(function (result) {}).catch(console.error);
+            </script>
+
+            <!-- (5/ 6) Scatterplot: Development vs. AI Index -->
+            <div id = "scatter-index-development"></div>
+            <script type="text/javascript">
+            var specVis1 = "./scatter_index_development.json";
+            vegaEmbed('#scatter-index-development', specVis1).then(function (result) {}).catch(console.error);
+            </script>
+
+            <!-- (6/6) Scatterplot: Commercial vs. AI Index -->
+            <div id = "scatter-index-commercial"></div>
+            <script type="text/javascript">
+                var specVis1 = "./scatter_index_commercial.json";
+                vegaEmbed('#scatter-index-commercial', specVis1).then(function (result) {}).catch(console.error);
+            </script>
+        </div>
+        <div class = "column">
+            <p> Insert relevant explanations for each scatterplot.</p>
+        </div>
+    </div>
+
+    <!--Dual column for radar chart & accompanying text-->
+    <div class = "row">
+        <h2>Role per attribute</h2>
+        <div class = "column">
+            <p> Radar chart not currently working. Insert here.</p>
+        </div>
+        <div class = "column">
+            <p> Insert relevant explanations for radar chart.</p>
+        </div>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Infrastructure vs. AI Index by Country"},
+    "data": {
+        "url": "AI_index_db.csv"
+    },
+    "mark": "point",
+    "encoding": {
+        "x": {"field": "Infrastructure", "type": "quantitative"},
+        "y": {"field": "Total score", "type": "quantitative"},
+        "tooltip": [
+            {"field": "Country", "type": "nominal"}, 
+            {"field": "Infrastructure", "type": "quantitative"},
+            {"field": "Total score", "type": "quantitative"}
+        ]
+    }
+}
