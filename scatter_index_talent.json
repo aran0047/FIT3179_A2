@@ -4,14 +4,19 @@
     "data": {
         "url": "AI_index_db.csv"
     },
-    "mark": "point",
+    "mark": "circle",
     "encoding": {
         "x": {"field": "Talent", "type": "quantitative"},
-        "y": {"field": "Total score", "type": "quantitative"},
+        "y": {"field": "score", "type": "quantitative"},
+        "color": {
+            "field": "score",
+            "type": "quantitative",
+            "scale": {"scheme": "viridis"}
+        },
         "tooltip": [
             {"field": "Country", "type": "nominal"}, 
             {"field": "Talent", "type": "quantitative"},
-            {"field": "Total score", "type": "quantitative"}
+            {"field": "score", "type": "quantitative"}
         ]
-    }
+    }  
 }
