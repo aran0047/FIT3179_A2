@@ -1,6 +1,6 @@
 .header {
   height: 200px;
-  background-image: url('/header_img.png');
+  background-image: url('header_img.png');
   background-size: contain;
   text-align: center;
   color: #ded44e;
