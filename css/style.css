@@ -1,6 +1,6 @@
 .header {
   height: 200px;
-  background-image: url('/header_img.png');
+  background-image: url('https://raw.githubusercontent.com/aran0047/FIT3179_A2/main/header_img.png');
   background-size: contain;
   text-align: center;
   color: #ded44e;
