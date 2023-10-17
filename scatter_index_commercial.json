@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "AI_index_db.csv"
+      "url": "https://raw.githubusercontent.com/aran0047/FIT3179_A2/main/AI_index_db.csv"
     },
     "height": 200,
     "width": 200,

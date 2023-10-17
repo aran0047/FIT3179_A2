@@ -38,7 +38,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "AI_index_db.csv"
+              "url": "https://raw.githubusercontent.com/aran0047/FIT3179_A2/main/AI_index_db.csv"
             },
             "key": "Country",
             "fields": ["score"]
@@ -74,7 +74,8 @@
     "legend": {
       "orient": "bottom",
       "labelAlign": "center",
-      "titleColor": "white"
+      "titleColor": "white",
+      "labelColor": "white"
     }
     }
 }
