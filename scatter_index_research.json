@@ -24,7 +24,7 @@
       "tooltip": [
         {"field": "Country", "type": "nominal"},
         {"field": "Research", "type": "quantitative"},
-        {"field": "score", "type": "quantitative"}
+        {"field": "score", "type": "quantitative", "title": "AI Index Score"}
       ]
     },
     "config": {
