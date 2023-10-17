@@ -15,7 +15,7 @@
       "color": {"value": "#f4a808"},
     "tooltip": [
       {"field": "Country", "type": "nominal"},
-      {"field": "score", "type": "quantitative", "title": "Index Score"}
+      {"field": "score", "type": "quantitative", "title": "AI Index Score"}
     ]
     }, 
     "config": {
