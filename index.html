@@ -1,97 +1,158 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>AI around the World</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-    <link rel = "stylesheet" href = "css/style.css">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Inter:wght@200&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <!-- Header "Container" -->
-    <h1>Global State of Artificial Intelligence around the World</h1>
-    <p> Insert explanation of topic, domain ... Include relevance, and short description of leaders.</p>
-
-    <div>
-        <label for = "scatterplot-dropdown">Select Attribute: </label>
-        <select id = "scatterplot-dropdown">
-            <option value = "Talent">Talent</option>
-            <option value = "Research">Research</option>
-            <option value = "Operating Environment">Operating Environment</option>
-            <option value = "Infrastructure">Infrastructure</option>
-            <option value = "Development">Development</option>
-            <option value = "Commercial">Commercial</option>
-        </select>
+    <div class="header">
+        <h1>GLOBAL STATE OF ARTIFICIAL INTELLIGENCE</h1>
     </div>
 
-    <div >
-        <!-- vibes -->
-        <p> Insert map</p>
-    </div>
+<div id="header-p">
+    <p class = "black-background-text"> The Global AI Index (GAII) reflects a nation's current state on Artificial Intelligence.
+        Launched in 2019 by Tortoise, the Global Artificial Intelligence Index is a comprehensive metric
+        that quantifies the AI landscape across a robust set of factors, and remains as one of 
+        the leaders in understanding the progression of Artificial Intelligence.
+    </p>
+    <p class = "black-background-text">At its most recent release, the Global AI Index includes 62 countries. Each country is given an overall score,
+        the Artificial Ingtelligence Index, which is based on 3 key pillars: Implementation, Innovation and Investment.
+    </p>
+</div>
 
-    <!--Dual column for scatterplot & accompanying text-->
-    <div class = "row">
-        <h2>Attributes vs. AI Index</h2>
-        <div class = "column">
-            <!-- (1/6) Scatterplot: Talent vs. AI Index -->
-            <div id = "scatter-index-talent"></div>
-            <script type="text/javascript">
-                var specVis1 = "./scatter_index_talent.json";
-                vegaEmbed('#scatter-index-talent', specVis1).then(function (result) {}).catch(console.error);
-            </script>
+<div id = "line-plot">
+    <div id="line_all"></div>
+</div>
 
-            <!-- (2/ 6)Scatterplot: Research vs. AI Index -->
-            <div id = "scatter-index-research"></div>
-            <script type="text/javascript">
-                var specVis1 = "./scatter_index_research.json";
-                vegaEmbed('#scatter-index-research', specVis1).then(function (result) {}).catch(console.error);
-            </script>
+<div id="map-div">
+    <p class = "black-background-text" id="map-text"> The map below visualizes the different AI Index scores accross the globe for which data is available.</p>
+    <div id="map"></div>
+</div>
 
-            <!-- (3/6) Scatterplot: Operating Environment vs. AI Index -->
-            <div id = "scatter-index-oe"></div>
-            <script type="text/javascript">
-                var specVis1 = "./scatter_index_oe.json";
-                vegaEmbed('#scatter-index-research', specVis1).then(function (result) {}).catch(console.error);
-            </script>
+ 
 
-            <!-- (4/6) Scatterplot: Infrastructure vs. AI Index -->
-            <div id = "scatter-index-infrastructure"></div>
-            <script type="text/javascript">
-                var specVis1 = "./scatter_index_infrastructure.json";
-                vegaEmbed('#scatter-index-infrastructure', specVis1).then(function (result) {}).catch(console.error);
-            </script>
-
-            <!-- (5/ 6) Scatterplot: Development vs. AI Index -->
-            <div id = "scatter-index-development"></div>
-            <script type="text/javascript">
-            var specVis1 = "./scatter_index_development.json";
-            vegaEmbed('#scatter-index-development', specVis1).then(function (result) {}).catch(console.error);
-            </script>
-
-            <!-- (6/6) Scatterplot: Commercial vs. AI Index -->
-            <div id = "scatter-index-commercial"></div>
-            <script type="text/javascript">
-                var specVis1 = "./scatter_index_commercial.json";
-                vegaEmbed('#scatter-index-commercial', specVis1).then(function (result) {}).catch(console.error);
-            </script>
+    <div id = "slider_box">
+        <div id = "slider-cont">
+            <input type="range" min="1" max="3" step="1" value="2" id="slider">
         </div>
-        <div class = "column">
-            <p> Insert relevant explanations for each scatterplot.</p>
+    <br>
+    <div id="selectedOption"></div>
+
+    <div class="pillar" id = "option1">
+        <h3>IMPLEMENTATION</h3>
+        <p class = "pillar-desc"> Implementation is representative of a country's practical stance on Artificial Intelligence.
+            It is indicative of the human and physical resources available in a country to develop AI Solutions.
+        </p>
+        <div class="pure-g">
+            <div class="pure-u-1-2" id="scatter-index-talent"></div>
+            <br>
+            <div class="pure-u-1-2">
+                <p>The <span = style = "color: #920c57; font-weight: bold;">talent</span> attribute reflects the density of specialists in Artificial Intelligence within
+                a nation, mainly calculated by considering the number of AI and data professionals in the country and
+                AI-related GitHub and Stack Overflow activity from users from that particular country. </p>
+            </div>
+        </div>
+     
+        <div class="pure-g">
+            <div class="pure-u-1-2" id="scatter-index-infrastructure"></div>
+            <div class="pure-u-1-2">
+                <p>The <span = style = "color: #920c57; font-weight: bold;">infrastructure</span> attribute reflects a country's ability
+                    to provide the resources required (electricity, internet access, databases, computational specifications etc.) to develop
+                    and promote a sustainable AI ecosystem. </p>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-2" id="scatter-index-oe"></div>
+          
+            <div class="pure-u-1-2">
+                <p><span = style = "color: #920c57; font-weight: bold;">Operating Environment</span> relates to the pubic perception of a country's stance on
+                    Artificial Intelligence, and factors gender diversity, transparency, and cybersecurity
+                    into consideration.
+                </p>
+            </div>
         </div>
     </div>
 
-    <!--Dual column for radar chart & accompanying text-->
-    <div class = "row">
-        <h2>Role per attribute</h2>
-        <div class = "column">
-            <p> Radar chart not currently working. Insert here.</p>
+    <div class="pillar" id = "option2">
+        <h3>INNOVATION</h3>
+        
+            <p class = "pillar-desc">  Innovation relates to a country's capacity for Artificial Intelligence in the </p>
+         <div class="pure-g">   
+            <div class="pure-u-1-2" id="scatter-index-research"></div>
+         
+            <div class="pure-u-1-2">
+                <p>The <span = style = "color: #920c57; font-weight: bold;">research</span> attribute reflects a countries role within the AI research community, 
+                    notably the research from a country that has been published, and how much these works have been cited.
+                </p>
+            </div>
         </div>
-        <div class = "column">
-            <p> Insert relevant explanations for radar chart.</p>
+        
+
+        <div class="pure-g">
+            <div class="pure-u-1-2" id="scatter-index-development"></div>
+            <div class="pure-u-1-2">
+                <p> <span = style = "color: #920c57; font-weight: bold;">Development</span> reflects the 
+                the actual new techniques, methods and technologies in AI being developed by a country. This is
+            measured by factors like the number of commits on pilular open-source AI packages.</p>
+            </div>
         </div>
     </div>
-    
+
+
+
+    <div class="pillar" id = "option3">
+        <h3>INVESTMENT</h3>
+        
+            <p class = "pillar-desc">  XXXXXXX relates to a country's capacity for Artificial Intelligence in the </p>
+           <div class="pure-g">
+             <div class="pure-u-1-2" id="scatter-index-commercial"></div>
+            <div class="pure-u-1-2">
+                <p>The <span = style = "color: #920c57; font-weight: bold;">commercial</span> attributes reflects 
+                    the AI-related commercial ventures taken by a country. Its calculation considers the funding for AI companies and startups, and the number of AI companies and startups.</p>
+            </div>
+        </div>
+ 
+        <div class="pure-g">
+            <div class="pure-u-1-2" id="scatter-index-gov"></div>
+            <div class="pure-u-1-2">
+                <p>The <span = style = "color: #920c57; font-weight: bold;">GOVERNMENT STRATEGY</span> attri
+                    It encompasses a country's past and current AI strategies.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+    var slider = document.getElementById("slider");
+    var selectedOption = document.getElementById("selectedOption");
+
+    slider.addEventListener("input", function() {
+        var option = "Option " + slider.value;
+        selectedOption.textContent = option;
+
+        var containers = document.querySelectorAll(".pillar"); 
+        containers.forEach(function(container) {
+            container.style.display = "none";
+        });
+
+        var selectedContainer = document.getElementById("option" + slider.value);
+        selectedContainer.style.display = "block";
+    });
+</script>
+
 
 </body>
 </html>

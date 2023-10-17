@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "AI_index_db.csv"},
+    "width": 1000,
+    "height": 30,
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "score",
+        "type": "quantitative",
+        "scale": {"zero": false},
+        "title": "Index Score" 
+      },
+      "size": {"value": 200},
+      "color": {"value": "#f4a808"},
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "score", "type": "quantitative", "title": "Index Score"}
+    ]
+    }, 
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      },
+      "background": "transparent",
+      "axis": {
+        "domainColor": "white",
+        "labelColor": "white",
+        "titleColor": "white"
+      }
+    }
+  }

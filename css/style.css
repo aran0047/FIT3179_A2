@@ -1,11 +1,88 @@
-.column {
-    float: left;
-    width: 50%;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.header {
+  height: 200px;
+  background-image: url('/header_img.png');
+  background-size: contain;
+  text-align: center;
+  color: #ded44e;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.black-background-text {
+  color:rgb(255, 255, 255)
+}
+
+#header-p {
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#line-plot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#map-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+h3 {
+  color: rgb(4, 4, 4);
+  font-family: 'Fira Code', monospace;
+  text-align: center;
+}
+
+.pillar-desc {
+  color: rgb(rgb(0, 0, 0));
+  font-family: 'Inter', sans-serif;;
+}
+
+body {
+  background-color: black;
+}
+
+p {
+  color: rgb(0, 0, 0);
+}
+
+#slider-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#slider{
+  width: 40%;
+}
+#slider_box {
+  color: rgb(222, 220, 220);
+  background-color: rgb(222, 220, 220);
+  margin: 200px;
+  padding: 50px;
+}
+
+#map{
+  padding: 50px;
+  margin: auto;
+}

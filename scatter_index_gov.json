@@ -11,7 +11,7 @@
       }],
     "mark": "circle",
     "encoding": {
-      "x": {"field": "Development", "type": "quantitative"},
+      "x": {"field": "Government Strategy", "type": "quantitative"},
       "y": {"field": "score", "type": "quantitative", "title": "Score"},
       "color": {"field": "score", "type": "quantitative",
               "scale": {"range": ["#080930", "#310d7a", "#5a0c6b","#920c57", 
@@ -23,7 +23,7 @@
       },
       "tooltip": [
         {"field": "Country", "type": "nominal"},
-        {"field": "Development", "type": "quantitative"},
+        {"field": "Government Strategy", "type": "quantitative"},
         {"field": "score", "type": "quantitative"}
       ]
     },

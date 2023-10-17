@@ -1,17 +1,43 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "Infrastructure vs. AI Index by Country"},
-    "data": {
-        "url": "AI_index_db.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "AI_index_db.csv"
+  },
+  "height": 200,
+  "width": 200,
+  "params": [{
+      "name": "highlight",
+      "select": {"type": "point", "toggle": "true"}
+    }],
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "Infrastructure", "type": "quantitative"},
+    "y": {"field": "score", "type": "quantitative", "title": "Score"},
+    "color": {"field": "score", "type": "quantitative",
+            "scale": {"range": ["#080930", "#310d7a", "#5a0c6b","#920c57", 
+            "#990d26", "#d7250f", "#d83b09", "#f18804"   
+               ]}},
+    "opacity": {
+      "condition": {"param": "highlight", "value": 1},
+      "value": 0.3
     },
-    "mark": "point",
-    "encoding": {
-        "x": {"field": "Infrastructure", "type": "quantitative"},
-        "y": {"field": "Total score", "type": "quantitative"},
-        "tooltip": [
-            {"field": "Country", "type": "nominal"}, 
-            {"field": "Infrastructure", "type": "quantitative"},
-            {"field": "Total score", "type": "quantitative"}
-        ]
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Infrastructure", "type": "quantitative"},
+      {"field": "score", "type": "quantitative"}
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "background": "transparent",
+    "axis": {
+      "domainColor": "black",
+      "labelColor": "black",
+      "titleColor": "black"
     }
+  }
 }
+
+  

@@ -1,17 +1,43 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "Development vs. AI Index by Country"},
     "data": {
-        "url": "AI_index_db.csv"
+      "url": "AI_index_db.csv"
     },
-    "mark": "point",
+    "height": 200,
+    "width": 200,
+    "params": [{
+        "name": "highlight",
+        "select": {"type": "point", "toggle": "true"}
+      }],
+    "mark": "circle",
     "encoding": {
-        "x": {"field": "Commercial", "type": "quantitative"},
-        "y": {"field": "Total score", "type": "quantitative"},
-        "tooltip": [
-            {"field": "Country", "type": "nominal"}, 
-            {"field": "Commercial", "type": "quantitative"},
-            {"field": "Total score", "type": "quantitative"}
-        ]
-    }
+      "x": {"field": "Commercial", "type": "quantitative"},
+      "y": {"field": "score", "type": "quantitative", "title": "Score"},
+      "color": {"field": "score", "type": "quantitative",
+              "scale": {"range": ["#080930", "#310d7a", "#5a0c6b","#920c57", 
+              "#990d26", "#d7250f", "#d83b09", "#f18804"   
+                 ]}},
+      "opacity": {
+        "condition": {"param": "highlight", "value": 1},
+        "value": 0.3
+      },
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {"field": "Commercial", "type": "quantitative"},
+        {"field": "score", "type": "quantitative"}
+      ]
+    },
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      },
+      "background": "transparent",
+      "axis": {
+        "domainColor": "black",
+        "labelColor": "black",
+        "titleColor": "black"
+      }
+  }
 }
+  
+    

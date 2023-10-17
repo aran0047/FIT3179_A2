@@ -1,0 +1,24 @@
+{
+    "data": {"url": "AI_index_db.csv"},
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "score",
+        "type": "quantitative",
+        "scale": {"zero": false},
+        "title": "Index Score"
+      },
+      "y": {
+        "field": "Region",
+        "type": "nominal"
+      },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "score", "type": "quantitative", "title": "Index Score"}
+    ], 
+    "color": {
+        "field": "Region",
+        "type": "nominal"
+    }
+  }
+}
